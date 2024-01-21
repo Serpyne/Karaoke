@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Karaoke</title>
+        <meta name="description" content="Karaoke">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}">
+        <script type="text/javascript" src="{{url_for('static', filename='js/index.js')}}"></script>
+        <script type="text/javascript">set_lyrics({{lyrics|tojson}});</script>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="frame-container">
+                <iframe
+                    id="video-frame"
+                    width="1280"
+                    height="720"
+                    src={{video_link}}
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        
+        <p id="clock">0</p>
+        
+        <div id="lyrics-frame"></div>
+    </body>
+</html>
